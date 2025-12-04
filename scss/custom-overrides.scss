@@ -1,0 +1,29 @@
+/* =================================== */
+/*  Eleven Custom Overrides
+/* =================================== */
+
+/*  Apercu Font Face
+/*  Place Apercu font files in: assets/fonts/
+/* =================================== */
+
+@font-face {
+  font-family: 'Apercu';
+  /* Path is relative to SCSS file location */
+  src: url('../assets/fonts/Apercu-Bold-Pro.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*  Heading Font Override
+/*  Apply Apercu Bold to all headings
+/* =================================== */
+
+:root {
+  --headingFontFamily: 'Apercu', var(--fontFamily);
+}
+
+/*  Future: Eleven Brand Tokens
+/*  Define brand tokens here as we go
+/* =================================== */
+
