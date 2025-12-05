@@ -1,29 +1,61 @@
 /* =================================== */
-/*  Eleven Custom Overrides
+/* Eleven Custom Overrides
 /* =================================== */
 
-/*  Apercu Font Face
-/*  Place Apercu font files in: assets/fonts/
-/* =================================== */
+/* --- 1. FONTS --- */
 
 @font-face {
   font-family: 'Apercu';
-  /* Path is relative to SCSS file location */
+  /* Ensure this path matches your actual font file location */
   src: url('../assets/fonts/Apercu-Bold-Pro.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-/*  Heading Font Override
-/*  Apply Apercu Bold to all headings
-/* =================================== */
-
 :root {
-  --headingFontFamily: 'Apercu', var(--fontFamily);
+  /* Apply Apercu to headings */
+  --headingFontFamily: 'Apercu', 'Inter', sans-serif;
+  /* Optional: Uncomment below if you want Apercu for body text too */
+  /* --fontFamily: 'Apercu', 'Inter', sans-serif; */
 }
 
-/*  Future: Eleven Brand Tokens
-/*  Define brand tokens here as we go
-/* =================================== */
+/* --- 2. LAYOUT & NAVIGATION TWEAKS --- */
 
+/* Hide the "Home" link (first item) in the top navigation */
+.navbar-nav li:first-child {
+  display: none !important;
+}
+
+/* Right-align the remaining navigation items */
+.navbar-nav {
+  display: flex !important;
+  width: 100% !important;
+  justify-content: flex-end !important;
+}
+
+/* Homepage: Hide the standard page title header */
+.is-homepage .container-title {
+  display: none !important;
+}
+
+/* Homepage: Customize Hero Typography */
+.is-homepage h1 {
+  font-size: 48px !important;
+  font-weight: 800 !important;
+}
+
+.is-homepage h2 {
+  font-size: 32px !important;
+}
+
+/* Content Width Constraints (Left Aligned) */
+:where(.sn-content, .supernova-documentation, main) :where(p, ul, ol, blockquote) {
+  max-width: 65ch;
+  margin-inline: 0;
+}
+
+:where(.sn-content, .supernova-documentation, main) :where(ul, ol) {
+  padding-left: 1.25rem;
+  margin-block: 1em;
+}
