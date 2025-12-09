@@ -54,19 +54,6 @@
   display: none !important;
 }
 
-/* TEST: Make all headers red globally */
-/* Override the CSS variable that headings use (loads before custom.css) */
-:root {
-  --headingInk: red;
-}
-
-/* Also directly override heading colors with high specificity to beat custom.css */
-h1, h2, h3, h4, h5, h6,
-.docs-content h1, .docs-content h2, .docs-content h3, .docs-content h4, .docs-content h5, .docs-content h6,
-.sn-content h1, .sn-content h2, .sn-content h3, .sn-content h4, .sn-content h5, .sn-content h6,
-body h1, body h2, body h3, body h4, body h5, body h6 {
-  color: red !important;
-}
 
 /* Content Width Constraints (Left Aligned) */
 :where(.sn-content, .supernova-documentation, main) :where(p, ul, ol, blockquote) {

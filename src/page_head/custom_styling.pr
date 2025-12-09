@@ -10,6 +10,10 @@
     {[ if (configuration.customFontFamily !== "") ]}
     --fontFamily: {{ configuration.customFontFamily }};
     {[/]}
+    
+    {* Eleven: Test token mapping - map primary ink color to red *}
+    --colorInkPrimary: var(--colorRed400);
+    
     {* Accent colors *}
     {[ let accentColorOption = configuration.lookAndFeelAccentColor /]}
     {[ let accentColor = (accentColorOption ? getColorValueFromSettings(accentColorOption.value, ((accentColorOption.aliasTo !== null) ? ds.tokenById(accentColorOption.aliasTo) : null)) : null) /]}
@@ -106,20 +110,3 @@
 {* Inject any custom CSS provided by the user *}
  /* Custom CSS overrides */
 {{ configuration.customCSS }}
-
-{* Eleven: Branding overrides - must load after user's custom CSS *}
-/* =================================== */
-/* Eleven Branding Overrides
-/* =================================== */
-
-/* Ensure Apercu font is preserved (from docs.min.css) */
-:root {
-  --headingFontFamily: "Apercu", "Inter", sans-serif !important;
-  --headingInk: red !important;
-}
-
-/* TEST: Make all headers red globally - simple verification */
-h1, h2, h3, h4, h5, h6 {
-  color: red !important;
-  font-family: var(--headingFontFamily) !important;
-}
