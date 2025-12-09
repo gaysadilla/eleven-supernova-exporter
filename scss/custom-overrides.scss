@@ -49,6 +49,11 @@
   font-size: 32px !important;
 }
 
+/* Homepage: Hide table of contents */
+.is-homepage #content-nav-container {
+  display: none !important;
+}
+
 /* Content Width Constraints (Left Aligned) */
 :where(.sn-content, .supernova-documentation, main) :where(p, ul, ol, blockquote) {
   max-width: 65ch;
