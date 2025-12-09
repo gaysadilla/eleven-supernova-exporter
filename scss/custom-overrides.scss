@@ -43,7 +43,6 @@
 .is-homepage h1 {
   font-size: 48px !important;
   font-weight: 800 !important;
-  color: red !important;
 }
 
 .is-homepage h2 {
@@ -53,6 +52,11 @@
 /* Homepage: Hide table of contents */
 .is-homepage #content-nav-container {
   display: none !important;
+}
+
+/* TEST: Make all headers red globally */
+h1, h2, h3, h4, h5, h6 {
+  color: red !important;
 }
 
 /* Content Width Constraints (Left Aligned) */
