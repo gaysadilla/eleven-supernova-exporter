@@ -112,10 +112,14 @@
 /* Eleven Branding Overrides
 /* =================================== */
 
-/* TEST: Make all headers red globally - simple verification */
+/* Ensure Apercu font is preserved (from docs.min.css) */
 :root {
+  --headingFontFamily: "Apercu", "Inter", sans-serif !important;
   --headingInk: red !important;
 }
+
+/* TEST: Make all headers red globally - simple verification */
 h1, h2, h3, h4, h5, h6 {
   color: red !important;
+  font-family: var(--headingFontFamily) !important;
 }
