@@ -106,3 +106,16 @@
 {* Inject any custom CSS provided by the user *}
  /* Custom CSS overrides */
 {{ configuration.customCSS }}
+
+{* Eleven: Branding overrides - must load after user's custom CSS *}
+/* =================================== */
+/* Eleven Branding Overrides
+/* =================================== */
+
+/* TEST: Make all headers red globally - simple verification */
+:root {
+  --headingInk: red !important;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: red !important;
+}
